@@ -452,12 +452,21 @@ body {
   body {
     margin: 0 !important;
     padding: 0 !important;
-    background: var(--cream) !important;
+    background: transparent !important;
   }
 
   body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+
+  /* Paint a full-page background so the PDF stays consistent even below content */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: var(--cream);
+    z-index: -1;
   }
 
   .actions {
@@ -472,6 +481,7 @@ body {
     box-shadow: none;
     border: none;
     overflow: visible;
+    background: var(--cream);
   }
 
   .page-bottom-spacer {
