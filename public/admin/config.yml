@@ -51,7 +51,8 @@ collections:
               - label: "Bullet points"
                 name: "points"
                 widget: "list"
-                field: { label: "Point", name: "point", widget: "string" }
+                summary: "{{fields.point}}"
+                field: { label: "Point", name: "point", widget: "text" }
 
           - label: "Earlier career"
             name: "earlierCareer"

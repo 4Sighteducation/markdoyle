@@ -1,0 +1,28 @@
+/* Decap CMS UI comfort tweaks (non-destructive). */
+
+/* Slightly larger overall editor text. */
+body {
+  font-size: 16px;
+}
+
+/* Make textareas comfortable for paragraphs/bullets. */
+textarea {
+  min-height: 140px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Increase input readability too. */
+input,
+select,
+button {
+  font-size: 15px;
+}
+
+/* Give list item editors a bit more breathing room. */
+[class*="ListItem"] textarea,
+[class*="ListControl"] textarea,
+[class*="list"] textarea {
+  min-height: 120px;
+}
+

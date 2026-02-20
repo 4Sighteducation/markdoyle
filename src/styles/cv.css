@@ -152,6 +152,7 @@ body {
   gap: 0;
   padding: 0 var(--page-padding);
   margin-top: 48px;
+  align-items: start;
 }
 
 .main-col {
@@ -161,6 +162,11 @@ body {
 
 .side-col {
   padding-left: 40px;
+}
+
+.career-wrap {
+  padding: 0 var(--page-padding);
+  margin-top: 56px;
 }
 
 /* --- SECTION HEADERS --- */
@@ -460,6 +466,11 @@ body {
     margin: 0;
     box-shadow: none;
     border: none;
+  }
+
+  /* Keep the top summary cleanly separate from career pages */
+  .career-wrap {
+    break-before: page;
   }
 
   .top-rule,

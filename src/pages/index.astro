@@ -62,38 +62,6 @@ const year = new Date().getFullYear();
               }
             </div>
           </div>
-
-          <div class="section-head"><h2>Career History</h2></div>
-
-          {
-            cv.careerHistory.map((r) => (
-              <div class="role">
-                <div class="role-meta">
-                  <div class="role-company">{r.company}</div>
-                  <div class="role-dates">{r.dates}</div>
-                </div>
-                <div class="role-title">{r.title}</div>
-                <ul class="role-points">
-                  {r.points.map((p) => (
-                    <li>{p}</li>
-                  ))}
-                </ul>
-              </div>
-            ))
-          }
-
-          <div class="early-career">
-            <div class="section-head"><h2>Earlier Career</h2></div>
-            {
-              cv.earlierCareer.map((e) => (
-                <div class="early-role">
-                  <div class="early-company">{e.company}</div>
-                  <div class="early-title">{e.title}</div>
-                  <div class="early-dates">{e.dates}</div>
-                </div>
-              ))
-            }
-          </div>
         </div>
 
         <div class="side-col">
@@ -117,6 +85,40 @@ const year = new Date().getFullYear();
           </div>
         </div>
       </div>
+
+      <section class="career-wrap">
+        <div class="section-head"><h2>Career History</h2></div>
+
+        {
+          cv.careerHistory.map((r) => (
+            <div class="role">
+              <div class="role-meta">
+                <div class="role-company">{r.company}</div>
+                <div class="role-dates">{r.dates}</div>
+              </div>
+              <div class="role-title">{r.title}</div>
+              <ul class="role-points">
+                {r.points.map((p) => (
+                  <li>{p}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+
+        <div class="early-career">
+          <div class="section-head"><h2>Earlier Career</h2></div>
+          {
+            cv.earlierCareer.map((e) => (
+              <div class="early-role">
+                <div class="early-company">{e.company}</div>
+                <div class="early-title">{e.title}</div>
+                <div class="early-dates">{e.dates}</div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
 
       <footer class="footer">
         <div class="footer-text">
