@@ -484,6 +484,48 @@ body {
     break-before: page;
   }
 
+  /* Pack roles tighter to avoid “blank bands” and extra pages */
+  .career-wrap {
+    margin-top: 36px;
+  }
+
+  .section-head {
+    margin-bottom: 18px;
+  }
+
+  .profile-text {
+    margin-bottom: 32px;
+  }
+
+  .competency-grid {
+    margin-bottom: 32px;
+  }
+
+  .role {
+    margin-bottom: 22px;
+    padding-bottom: 22px;
+    /* Allow splitting across pages to avoid huge gaps */
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .role-title {
+    margin-bottom: 10px;
+  }
+
+  .role-points li {
+    margin-bottom: 5px;
+  }
+
+  .early-career {
+    margin-top: 26px;
+  }
+
+  .footer {
+    margin-top: 28px;
+    padding: 14px 0 18px;
+  }
+
   .top-rule,
   .red-rule {
     -webkit-print-color-adjust: exact;
