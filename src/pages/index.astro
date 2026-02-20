@@ -1,0 +1,132 @@
+---
+import cv from "../content/cv.json";
+import "../styles/cv.css";
+
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{cv.seo.title}</title>
+    <meta name="description" content={cv.seo.description} />
+  </head>
+  <body>
+    <div class="page">
+      <div class="actions">
+        <button class="print-btn" type="button" onclick="window.print()">Print / Save as PDF</button>
+      </div>
+
+      <div class="top-rule"></div>
+      <div class="red-rule"></div>
+
+      <header class="masthead">
+        <div class="masthead-left">
+          <h1>
+            {cv.masthead.firstName}<br />
+            <em>{cv.masthead.lastName}</em>
+          </h1>
+        </div>
+        <div class="masthead-right">
+          <div class="masthead-title">{cv.masthead.titleLine}</div>
+          <div class="contact-line">
+            {cv.masthead.phone}<br />
+            <a href={`mailto:${cv.masthead.email}`}>{cv.masthead.email}</a>
+          </div>
+        </div>
+      </header>
+
+      <hr class="masthead-divider" />
+
+      <div class="body-grid">
+        <div class="main-col">
+          <div style="margin-bottom:40px;">
+            <div class="section-head"><h2>Profile</h2></div>
+            <p class="profile-text">{cv.profile}</p>
+          </div>
+
+          <div style="margin-bottom:48px;">
+            <div class="section-head"><h2>Core Competencies &amp; Key Skills</h2></div>
+            <div class="competency-grid">
+              {
+                cv.competencies.map((c) => (
+                  <div class="competency-item">
+                    <div class="competency-name">{c.name}</div>
+                    <div class="comp-track">
+                      <div class="comp-fill" style={`width:${Math.max(0, Math.min(100, c.level))}%;`}></div>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="section-head"><h2>Career History</h2></div>
+
+          {
+            cv.careerHistory.map((r) => (
+              <div class="role">
+                <div class="role-meta">
+                  <div class="role-company">{r.company}</div>
+                  <div class="role-dates">{r.dates}</div>
+                </div>
+                <div class="role-title">{r.title}</div>
+                <ul class="role-points">
+                  {r.points.map((p) => (
+                    <li>{p}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+
+          <div class="early-career">
+            <div class="section-head"><h2>Earlier Career</h2></div>
+            {
+              cv.earlierCareer.map((e) => (
+                <div class="early-role">
+                  <div class="early-company">{e.company}</div>
+                  <div class="early-title">{e.title}</div>
+                  <div class="early-dates">{e.dates}</div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="side-col">
+          <div class="sidebar-section">
+            <div class="section-head"><h2>Sectors</h2></div>
+            <div>
+              {cv.sectors.map((s) => (
+                <span class="sector-tag">{s}</span>
+              ))}
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <div class="section-head"><h2>Education</h2></div>
+            {cv.education.map((ed) => (
+              <div class="edu-item">
+                <div class="edu-qual">{ed.qualification}</div>
+                <div class="edu-inst">{ed.institution}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-text">
+          {cv.footer.left} · {year}
+        </div>
+        <div class="footer-name">{cv.footer.right}</div>
+      </footer>
+
+      <div style="height:56px;"></div>
+    </div>
+  </body>
+</html>
+

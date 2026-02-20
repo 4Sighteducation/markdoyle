@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Complete sign-in</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background: #f6f7f9;
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+      .card {
+        background: white;
+        padding: 24px;
+        border-radius: 12px;
+        width: min(520px, calc(100vw - 32px));
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+      p {
+        margin: 0;
+        color: #4b5563;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+      .actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 14px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      button {
+        appearance: none;
+        border: 0;
+        background: #111827;
+        color: white;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button.secondary {
+        background: #e5e7eb;
+        color: #111827;
+      }
+      .status {
+        margin-top: 12px;
+        font-size: 12px;
+        color: #6b7280;
+        word-break: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Finish setting up your editor login</h1>
+      <p>Set a password to activate your invite.</p>
+      <form id="invite-form" class="actions" style="margin-top: 12px; flex-direction: column;">
+        <input id="email" name="email" type="email" autocomplete="username" style="display:none" />
+        <label style="width: 100%;">
+          <span style="display:block;font-size:12px;color:#6b7280;margin-bottom:6px;">New password</span>
+          <input id="pw" type="password" minlength="8" required autocomplete="new-password" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:8px;" />
+        </label>
+        <label style="width: 100%;">
+          <span style="display:block;font-size:12px;color:#6b7280;margin-bottom:6px;">Confirm password</span>
+          <input id="pw2" type="password" minlength="8" required autocomplete="new-password" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:8px;" />
+        </label>
+        <button type="submit" style="width:100%;">Set password</button>
+        <button id="go-admin" type="button" class="secondary" style="width:100%;">Go to /admin</button>
+      </form>
+      <div id="status" class="status"></div>
+    </div>
+
+    <script type="module">
+      const NETLIFY_IDENTITY_API_URL =
+        "https://YOUR-NETLIFY-IDENTITY-SITE.netlify.app/.netlify/identity";
+
+      const statusEl = document.getElementById("status");
+      const setStatus = (msg) => {
+        if (statusEl) statusEl.textContent = msg;
+      };
+
+      const params = new URLSearchParams(window.location.search || "");
+      const tokenFromQuery = params.get("invite_token");
+      const tokenFromHash = (window.location.hash || "").match(/invite_token=([^&]+)/)?.[1];
+      const inviteToken = tokenFromQuery || tokenFromHash || "";
+
+      setStatus(inviteToken ? "Invite token detected." : "Missing invite token.");
+
+      let auth;
+      async function loadGoTrue() {
+        const sources = ["https://esm.sh/gotrue-js@0.9.29", "https://cdn.skypack.dev/gotrue-js@0.9.29"];
+
+        let lastError;
+        for (const src of sources) {
+          try {
+            const mod = await import(src);
+            const GoTrueCtor = mod.default || mod.GoTrue || mod;
+            auth = new GoTrueCtor({
+              APIUrl: NETLIFY_IDENTITY_API_URL,
+              audience: "",
+              setCookie: false,
+            });
+            return true;
+          } catch (err) {
+            lastError = err;
+          }
+        }
+
+        setStatus("Failed to load auth library. Please refresh.");
+        console.error(lastError);
+        return false;
+      }
+
+      await loadGoTrue();
+
+      document.getElementById("invite-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (!inviteToken) {
+          setStatus("Missing invite token. Please use the invite email link again.");
+          return;
+        }
+        const pw = document.getElementById("pw").value;
+        const pw2 = document.getElementById("pw2").value;
+        if (pw !== pw2) {
+          setStatus("Passwords don’t match.");
+          return;
+        }
+        setStatus("Setting password…");
+        try {
+          if (!auth) {
+            setStatus("Auth library not loaded yet. Please refresh.");
+            return;
+          }
+          await auth.acceptInvite(decodeURIComponent(inviteToken), pw, true);
+          setStatus("Done! Redirecting to /admin…");
+          window.location.replace("/admin/");
+        } catch (err) {
+          setStatus(err?.message || "Invite failed. Please ask the admin to resend the invite.");
+        }
+      });
+
+      const adminBtn = document.getElementById("go-admin");
+      if (adminBtn) adminBtn.addEventListener("click", () => window.location.replace("/admin/"));
+    </script>
+  </body>
+</html>
+

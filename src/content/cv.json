@@ -1,0 +1,66 @@
+{
+  "seo": {
+    "title": "Mark Doyle – Commercial Director",
+    "description": "Commercial Director · UK & Ireland"
+  },
+  "masthead": {
+    "firstName": "Mark",
+    "lastName": "Doyle",
+    "titleLine": "Commercial Director · UK & Ireland",
+    "phone": "07758 119516",
+    "email": "Doylemj96@gmail.com"
+  },
+  "profile": "An accomplished Commercial Director with a strong track record of driving profitable growth across CPG branded and own-label businesses. Skilled in leading high-performing teams across Sales, Demand Planning and NPD. Combining data-driven insight with innovative problem-solving to deliver measurable, sustainable results in competitive, fast-evolving markets.",
+  "competencies": [
+    { "name": "Strategic Commercial Leadership", "level": 97 },
+    { "name": "P&L & Revenue Management", "level": 95 },
+    { "name": "Team Leadership & Development", "level": 94 },
+    { "name": "Negotiation & Stakeholder Management", "level": 96 },
+    { "name": "Business Transformation & M&A", "level": 88 },
+    { "name": "Demand Planning & NPD", "level": 86 },
+    { "name": "Market Strategy & Execution", "level": 93 },
+    { "name": "Category & Channel Expansion", "level": 91 }
+  ],
+  "careerHistory": [
+    {
+      "company": "Fullers Foods",
+      "dates": "April 2023 – October 2025",
+      "title": "Commercial Director — UK & Ireland",
+      "points": [
+        "Led Sales, NPD and Demand Planning functions; 30 internal colleagues and numerous external stakeholders.",
+        "Delivered consistent YOY volume and value growth ahead of market, driving revenue from £335m (2022) to £533m (2024), with 2025 projected at £575m.",
+        "Developed and executed a 5-year commercial strategy spanning core growth, channel and category expansion, regional expansion, M&A opportunities and brand development.",
+        "Created new commercial ways of working across three key functions — improving alignment, operational efficiency and customer relationships.",
+        "Regular commercial reporting to Private Equity shareholders, ensuring strategic alignment to business objectives."
+      ]
+    },
+    {
+      "company": "McCain Foods",
+      "dates": "October 2017 – March 2023",
+      "title": "Customer Development Director — UK & Ireland",
+      "points": [
+        "Key leadership team member across Retail and Foodservice divisions, working cross-functionally with Marketing, Category and Operations.",
+        "Led Sales and Demand Planning teams, delivering market share growth in UK & Ireland, volume and value growth while optimising commercial investment.",
+        "Delivered best-in-class customer engagement, contributing significantly to proposition development, category initiatives and Brand Plan delivery."
+      ]
+    }
+  ],
+  "earlierCareer": [
+    { "company": "Baxters Food Group", "title": "Retail National Account Controller", "dates": "2013 – 2017" },
+    { "company": "Princes Ltd", "title": "National Account Controller — Tesco, Asda, Coop, Aldi", "dates": "2009 – 2013" },
+    { "company": "Premier Foods", "title": "Senior National Account Manager, Tesco", "dates": "2008 – 2009" },
+    { "company": "Northern Foods", "title": "National Account Manager — Morrisons, JS, Coop", "dates": "2007 – 2008" },
+    { "company": "Cadbury Trebor Bassett", "title": "Account & People Management — Retail, Field Sales, C&C/Wholesale", "dates": "2000 – 2007" }
+  ],
+  "sectors": ["CPG / FMCG", "Branded", "Own Label", "Grocery Retail", "Foodservice", "Private Equity", "M&A"],
+  "education": [
+    { "qualification": "B.A. Hons — Economics & Business Management", "institution": "Leeds Trinity College" },
+    { "qualification": "A Levels — Economics, Law, Business Studies", "institution": "Llandrillo College, N. Wales" },
+    { "qualification": "GCSE — 9 passes, 7 at Grade A–C", "institution": "Blessed Edward Jones HS, Rhyl" }
+  ],
+  "footer": {
+    "left": "Confidential — Mark Doyle",
+    "right": "Mark Doyle"
+  }
+}
+

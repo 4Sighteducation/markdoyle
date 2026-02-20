@@ -1,0 +1,82 @@
+backend:
+  name: git-gateway
+  branch: main
+  identity_url: "https://YOUR-NETLIFY-IDENTITY-SITE.netlify.app/.netlify/identity"
+  gateway_url: "https://YOUR-NETLIFY-IDENTITY-SITE.netlify.app/.netlify/git/github"
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "cv"
+    label: "CV"
+    files:
+      - label: "CV Content"
+        name: "cv"
+        file: "src/content/cv.json"
+        fields:
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+
+          - label: "Masthead"
+            name: "masthead"
+            widget: "object"
+            fields:
+              - { label: "First name", name: "firstName", widget: "string" }
+              - { label: "Last name", name: "lastName", widget: "string" }
+              - { label: "Title line", name: "titleLine", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
+              - { label: "Email", name: "email", widget: "string", required: false }
+
+          - { label: "Profile", name: "profile", widget: "text" }
+
+          - label: "Core competencies"
+            name: "competencies"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Level (0-100)", name: "level", widget: "number", value_type: "int", min: 0, max: 100 }
+
+          - label: "Career history"
+            name: "careerHistory"
+            widget: "list"
+            fields:
+              - { label: "Company", name: "company", widget: "string" }
+              - { label: "Dates", name: "dates", widget: "string" }
+              - { label: "Role title", name: "title", widget: "string" }
+              - label: "Bullet points"
+                name: "points"
+                widget: "list"
+                field: { label: "Point", name: "point", widget: "string" }
+
+          - label: "Earlier career"
+            name: "earlierCareer"
+            widget: "list"
+            fields:
+              - { label: "Company", name: "company", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Dates", name: "dates", widget: "string" }
+
+          - label: "Sectors"
+            name: "sectors"
+            widget: "list"
+            field: { label: "Sector", name: "sector", widget: "string" }
+
+          - label: "Education"
+            name: "education"
+            widget: "list"
+            fields:
+              - { label: "Qualification", name: "qualification", widget: "string" }
+              - { label: "Institution", name: "institution", widget: "string" }
+
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Left text", name: "left", widget: "string" }
+              - { label: "Right text", name: "right", widget: "string" }
+

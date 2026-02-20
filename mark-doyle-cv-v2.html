@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mark Doyle – Commercial Director</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f7f4ef;
+    --cream-dark: #ede8e0;
+    --ink: #1a1a1a;
+    --ink-mid: #3d3d3d;
+    --ink-light: #7a7a7a;
+    --red: #c0392b;
+    --red-muted: rgba(192,57,43,0.08);
+    --slate: #2c3e50;
+    --rule: #d4cfc8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* --- TOP RULE --- */
+  .top-rule {
+    height: 5px;
+    background: var(--ink);
+  }
+
+  .red-rule {
+    height: 2px;
+    background: var(--red);
+  }
+
+  /* --- MASTHEAD --- */
+  .masthead {
+    padding: 52px 64px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .masthead-left h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 0.9;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  .masthead-left h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--red);
+  }
+
+  .masthead-right {
+    padding-top: 8px;
+    min-width: 220px;
+    border-left: 1px solid var(--rule);
+    padding-left: 28px;
+  }
+
+  .masthead-title {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 12px;
+  }
+
+  .contact-line {
+    font-size: 0.82rem;
+    color: var(--ink-mid);
+    line-height: 2;
+    font-weight: 300;
+  }
+
+  .contact-line a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  /* --- MASTHEAD DIVIDER --- */
+  .masthead-divider {
+    margin: 44px 64px 0;
+    border: none;
+    border-top: 1px solid var(--ink);
+  }
+
+  /* --- BODY LAYOUT --- */
+  .body-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 0;
+    padding: 0 64px;
+    margin-top: 48px;
+  }
+
+  .main-col {
+    padding-right: 56px;
+    border-right: 1px solid var(--rule);
+  }
+
+  .side-col {
+    padding-left: 40px;
+  }
+
+  /* --- SECTION HEADERS --- */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .section-head h2 {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    white-space: nowrap;
+  }
+
+  .section-head::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* --- PROFILE --- */
+  .profile-text {
+    font-size: 0.92rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    font-weight: 300;
+    margin-bottom: 48px;
+  }
+
+  .profile-text strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* --- ROLES --- */
+  .role {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .role:last-of-type {
+    border-bottom: none;
+  }
+
+  .role-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+
+  .role-company {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .role-dates {
+    font-size: 0.73rem;
+    color: var(--ink-light);
+    font-weight: 300;
+  }
+
+  .role-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  .role-points {
+    list-style: none;
+  }
+
+  .role-points li {
+    font-size: 0.84rem;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    font-weight: 300;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 7px;
+  }
+
+  .role-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 5px;
+    height: 1px;
+    background: var(--red);
+  }
+
+
+  /* --- COMPETENCIES IN MAIN COL --- */
+  .competency-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 40px;
+    margin-bottom: 48px;
+  }
+
+
+  .early-career {
+    margin-top: 40px;
+  }
+
+  .early-role {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--cream-dark);
+    gap: 16px;
+  }
+
+  .early-role:last-child { border-bottom: none; }
+
+  .early-company {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    min-width: 130px;
+  }
+
+  .early-title {
+    font-size: 0.82rem;
+    color: var(--ink-mid);
+    flex: 1;
+    font-weight: 300;
+  }
+
+  .early-dates {
+    font-size: 0.72rem;
+    color: var(--ink-light);
+    font-weight: 300;
+    white-space: nowrap;
+  }
+
+  /* --- SIDEBAR --- */
+  .sidebar-section {
+    margin-bottom: 40px;
+  }
+
+  .competency-item {
+    margin-bottom: 14px;
+  }
+
+  .competency-name {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 5px;
+    line-height: 1.3;
+  }
+
+  .comp-track {
+    height: 1px;
+    background: var(--rule);
+    position: relative;
+  }
+
+  .comp-fill {
+    height: 1px;
+    background: var(--ink);
+    position: absolute;
+    top: 0; left: 0;
+    transition: width 1.2s ease;
+  }
+
+  .comp-dot {
+    position: absolute;
+    right: calc(100% - var(--w));
+    top: -3px;
+    width: 7px; height: 7px;
+    background: var(--red);
+    border-radius: 50%;
+    transition: right 1.2s ease;
+  }
+
+  .sector-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--ink-mid);
+    border: 1px solid var(--rule);
+    padding: 4px 10px;
+    margin: 0 4px 6px 0;
+    letter-spacing: 0.05em;
+  }
+
+  .edu-item {
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .edu-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .edu-qual {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 3px;
+  }
+
+  .edu-inst {
+    font-size: 0.75rem;
+    color: var(--ink-light);
+    font-weight: 300;
+  }
+
+  /* --- FOOTER --- */
+  .footer {
+    margin: 48px 64px 0;
+    padding: 20px 0;
+    border-top: 1px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-text {
+    font-size: 0.68rem;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--ink-light);
+  }
+
+  /* --- ANIMATIONS --- */
+  .fade-in {
+    animation: fadeIn 0.7s ease-out both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .masthead-left { animation: fadeIn 0.5s ease-out; }
+  .body-grid { animation: fadeIn 0.6s 0.1s ease-out both; }
+
+  /* --- PRINT --- */
+  @media print {
+    body { background: white; }
+    .top-rule { -webkit-print-color-adjust: exact; }
+    .red-rule { -webkit-print-color-adjust: exact; }
+    .revenue-callout { -webkit-print-color-adjust: exact; }
+    @keyframes fadeIn { from { opacity:1; transform:none; } }
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 900px) {
+    .masthead { padding: 36px 28px 0; flex-direction: column; }
+    .masthead-left h1 { font-size: 3.6rem; }
+    .masthead-right { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 20px; margin-top: 20px; }
+    .masthead-divider { margin: 32px 28px 0; }
+    .body-grid { grid-template-columns: 1fr; padding: 0 28px; }
+    .main-col { padding-right: 0; border-right: none; border-bottom: 1px solid var(--rule); padding-bottom: 40px; }
+    .side-col { padding-left: 0; padding-top: 40px; }
+    .competency-grid { grid-template-columns: 1fr; }
+    .footer { margin: 32px 28px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-rule"></div>
+<div class="red-rule"></div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-left">
+    <h1>Mark<br><em>Doyle</em></h1>
+  </div>
+  <div class="masthead-right">
+    <div class="masthead-title">Commercial Director · UK &amp; Ireland</div>
+    <div class="contact-line">
+      07758 119516<br>
+      <a href="mailto:Doylemj96@gmail.com">Doylemj96@gmail.com</a>
+    </div>
+  </div>
+</header>
+
+<hr class="masthead-divider">
+
+<!-- BODY -->
+<div class="body-grid">
+
+  <!-- MAIN COLUMN -->
+  <div class="main-col">
+
+    <div style="margin-bottom:40px;">
+      <div class="section-head"><h2>Profile</h2></div>
+      <p class="profile-text">An accomplished Commercial Director with a <strong>strong track record of driving profitable growth</strong> across CPG branded and own-label businesses. Skilled in leading high-performing teams across Sales, Demand Planning and NPD. Combining data-driven insight with innovative problem-solving to deliver <strong>measurable, sustainable results</strong> in competitive, fast-evolving markets.</p>
+    </div>
+
+    <div style="margin-bottom:48px;">
+      <div class="section-head"><h2>Core Competencies &amp; Key Skills</h2></div>
+      <div class="competency-grid">
+        <div class="competency-item">
+          <div class="competency-name">Strategic Commercial Leadership</div>
+          <div class="comp-track"><div class="comp-fill" style="width:97%;"></div></div>
+        </div>
+        <div class="competency-item">
+          <div class="competency-name">P&amp;L &amp; Revenue Management</div>
+          <div class="comp-track"><div class="comp-fill" style="width:95%;"></div></div>
+        </div>
+        <div class="competency-item">
+          <div class="competency-name">Team Leadership &amp; Development</div>
+          <div class="comp-track"><div class="comp-fill" style="width:94%;"></div></div>
+        </div>
+        <div class="competency-item">
+          <div class="competency-name">Negotiation &amp; Stakeholder Management</div>
+          <div class="comp-track"><div class="comp-fill" style="width:96%;"></div></div>
+        </div>
+        <div class="competency-item">
+          <div class="competency-name">Business Transformation &amp; M&amp;A</div>
+          <div class="comp-track"><div class="comp-fill" style="width:88%;"></div></div>
+        </div>
+        <div class="competency-item">
+          <div class="competency-name">Demand Planning &amp; NPD</div>
+          <div class="comp-track"><div class="comp-fill" style="width:86%;"></div></div>
+        </div>
+        <div class="competency-item">
+          <div class="competency-name">Market Strategy &amp; Execution</div>
+          <div class="comp-track"><div class="comp-fill" style="width:93%;"></div></div>
+        </div>
+        <div class="competency-item">
+          <div class="competency-name">Category &amp; Channel Expansion</div>
+          <div class="comp-track"><div class="comp-fill" style="width:91%;"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head"><h2>Career History</h2></div>
+
+    <div class="role">
+      <div class="role-meta">
+        <div class="role-company">Fullers Foods</div>
+        <div class="role-dates">April 2023 – October 2025</div>
+      </div>
+      <div class="role-title">Commercial Director — UK &amp; Ireland</div>
+      <ul class="role-points">
+        <li>Led Sales, NPD and Demand Planning functions; 30 internal colleagues and numerous external stakeholders.</li>
+        <li>Delivered consistent YOY volume and value growth ahead of market, driving revenue from £335m (2022) to £533m (2024), with 2025 projected at £575m.</li>
+        <li>Developed and executed a 5-year commercial strategy spanning core growth, channel and category expansion, regional expansion, M&amp;A opportunities and brand development.</li>
+        <li>Created new commercial ways of working across three key functions — improving alignment, operational efficiency and customer relationships.</li>
+        <li>Regular commercial reporting to Private Equity shareholders, ensuring strategic alignment to business objectives.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-meta">
+        <div class="role-company">McCain Foods</div>
+        <div class="role-dates">October 2017 – March 2023</div>
+      </div>
+      <div class="role-title">Customer Development Director — UK &amp; Ireland</div>
+      <ul class="role-points">
+        <li>Key leadership team member across Retail and Foodservice divisions, working cross-functionally with Marketing, Category and Operations.</li>
+        <li>Led Sales and Demand Planning teams, delivering market share growth in UK &amp; Ireland, volume and value growth while optimising commercial investment.</li>
+        <li>Delivered best-in-class customer engagement, contributing significantly to proposition development, category initiatives and Brand Plan delivery.</li>
+      </ul>
+    </div>
+
+    <div class="early-career">
+      <div class="section-head"><h2>Earlier Career</h2></div>
+      <div class="early-role">
+        <div class="early-company">Baxters Food Group</div>
+        <div class="early-title">Retail National Account Controller</div>
+        <div class="early-dates">2013 – 2017</div>
+      </div>
+      <div class="early-role">
+        <div class="early-company">Princes Ltd</div>
+        <div class="early-title">National Account Controller — Tesco, Asda, Coop, Aldi</div>
+        <div class="early-dates">2009 – 2013</div>
+      </div>
+      <div class="early-role">
+        <div class="early-company">Premier Foods</div>
+        <div class="early-title">Senior National Account Manager, Tesco</div>
+        <div class="early-dates">2008 – 2009</div>
+      </div>
+      <div class="early-role">
+        <div class="early-company">Northern Foods</div>
+        <div class="early-title">National Account Manager — Morrisons, JS, Coop</div>
+        <div class="early-dates">2007 – 2008</div>
+      </div>
+      <div class="early-role">
+        <div class="early-company">Cadbury Trebor Bassett</div>
+        <div class="early-title">Account &amp; People Management — Retail, Field Sales, C&amp;C/Wholesale</div>
+        <div class="early-dates">2000 – 2007</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SIDE COLUMN -->
+  <div class="side-col">
+
+    <div class="sidebar-section">
+      <div class="section-head"><h2>Sectors</h2></div>
+      <div>
+        <span class="sector-tag">CPG / FMCG</span>
+        <span class="sector-tag">Branded</span>
+        <span class="sector-tag">Own Label</span>
+        <span class="sector-tag">Grocery Retail</span>
+        <span class="sector-tag">Foodservice</span>
+        <span class="sector-tag">Private Equity</span>
+        <span class="sector-tag">M&amp;A</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="section-head"><h2>Education</h2></div>
+
+      <div class="edu-item">
+        <div class="edu-qual">B.A. Hons — Economics &amp; Business Management</div>
+        <div class="edu-inst">Leeds Trinity College</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-qual">A Levels — Economics, Law, Business Studies</div>
+        <div class="edu-inst">Llandrillo College, N. Wales</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-qual">GCSE — 9 passes, 7 at Grade A–C</div>
+        <div class="edu-inst">Blessed Edward Jones HS, Rhyl</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-text">Confidential — Mark Doyle · 2025</div>
+  <div class="footer-name">Mark Doyle</div>
+</footer>
+
+<div style="height:56px;"></div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>CV Editor</title>
+  </head>
+  <body>
+    <script>
+      // Ensure trailing slash so config.yml resolves to /admin/config.yml
+      if (window.location.pathname === "/admin") {
+        window.location.replace("/admin/");
+      }
+
+      // If Identity invite/confirmation tokens are present in the hash,
+      // route to a dedicated Identity-only page first (Decap uses hash routing).
+      (function () {
+        if (window.location.protocol === "http:") {
+          window.location.replace(
+            "https://" +
+              window.location.host +
+              window.location.pathname +
+              window.location.search +
+              window.location.hash,
+          );
+          return;
+        }
+
+        var h = window.location.hash || "";
+        if (
+          h.indexOf("invite_token=") !== -1 ||
+          h.indexOf("recovery_token=") !== -1 ||
+          h.indexOf("confirmation_token=") !== -1
+        ) {
+          window.location.replace("/admin/invite.html" + h);
+        }
+      })();
+    </script>
+
+    <!-- Netlify Identity (used by Git Gateway) -->
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- Decap CMS -->
+    <script defer src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <script>
+      // IMPORTANT: /admin is hosted on Vercel, but Identity lives on Netlify.
+      // Update this to your Netlify Identity site once created.
+      const NETLIFY_IDENTITY_API_URL =
+        "https://YOUR-NETLIFY-IDENTITY-SITE.netlify.app/.netlify/identity";
+
+      window.addEventListener("DOMContentLoaded", () => {
+        if (!window.netlifyIdentity || !window.netlifyIdentity.init) return;
+
+        window.netlifyIdentity.init({ APIUrl: NETLIFY_IDENTITY_API_URL });
+
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      });
+    </script>
+  </body>
+</html>
+
