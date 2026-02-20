@@ -45,6 +45,10 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.page-bottom-spacer {
+  height: 56px;
+}
+
 /* --- TOP RULE --- */
 .top-rule {
   height: 5px;
@@ -462,10 +466,17 @@ body {
 
   .page {
     width: 210mm;
-    min-height: 297mm;
+    min-height: auto;
+    height: auto;
     margin: 0;
     box-shadow: none;
     border: none;
+    overflow: visible;
+  }
+
+  .page-bottom-spacer {
+    display: none !important;
+    height: 0 !important;
   }
 
   /* Keep the top summary cleanly separate from career pages */
