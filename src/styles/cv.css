@@ -480,8 +480,8 @@ body {
   }
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 900px) {
+/* --- RESPONSIVE (screen only; keep print as desktop layout) --- */
+@media screen and (max-width: 900px) {
   :root {
     --page-padding: 28px;
   }
