@@ -23,6 +23,15 @@ This site is hosted on **Vercel**, but editor login is handled by a small **Netl
    - `public/admin/index.html` → `NETLIFY_IDENTITY_API_URL`
    - `public/admin/invite.html` → `NETLIFY_IDENTITY_API_URL`
 
+### Fix invite / recovery links (important)
+
+Because the CMS (`/admin`) is hosted on Vercel (not Netlify), you should set custom Identity email templates so invite/recovery/confirmation links open the Vercel site.
+
+Netlify → **Project configuration → Identity → Emails**:
+- Invitation template: `/admin/email-templates/invitation.html`
+- Confirmation template: `/admin/email-templates/confirmation.html`
+- Password recovery template: `/admin/email-templates/recovery.html`
+
 ## Part 3 — Connect domain `markdoyle.me`
 
 1. In Vercel project → Settings → Domains

@@ -434,13 +434,15 @@ body {
 /* --- PRINT --- */
 @page {
   size: A4;
-  margin: 12mm;
+  margin: 0;
 }
 
 @media print {
   html,
   body {
-    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: var(--cream) !important;
   }
 
   body {
@@ -453,7 +455,8 @@ body {
   }
 
   .page {
-    width: auto;
+    width: 210mm;
+    min-height: 297mm;
     margin: 0;
     box-shadow: none;
     border: none;

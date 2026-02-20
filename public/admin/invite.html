@@ -63,18 +63,18 @@
   <body>
     <div class="card">
       <h1>Finish setting up your editor login</h1>
-      <p>Set a password to activate your invite.</p>
+      <p id="subtitle">Set a password to activate your invite.</p>
       <form id="invite-form" class="actions" style="margin-top: 12px; flex-direction: column;">
         <input id="email" name="email" type="email" autocomplete="username" style="display:none" />
         <label style="width: 100%;">
-          <span style="display:block;font-size:12px;color:#6b7280;margin-bottom:6px;">New password</span>
+          <span id="pw-label" style="display:block;font-size:12px;color:#6b7280;margin-bottom:6px;">New password</span>
           <input id="pw" type="password" minlength="8" required autocomplete="new-password" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:8px;" />
         </label>
         <label style="width: 100%;">
           <span style="display:block;font-size:12px;color:#6b7280;margin-bottom:6px;">Confirm password</span>
           <input id="pw2" type="password" minlength="8" required autocomplete="new-password" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:8px;" />
         </label>
-        <button type="submit" style="width:100%;">Set password</button>
+        <button id="submit-btn" type="submit" style="width:100%;">Continue</button>
         <button id="go-admin" type="button" class="secondary" style="width:100%;">Go to /admin</button>
       </form>
       <div id="status" class="status"></div>
@@ -82,7 +82,7 @@
 
     <script type="module">
       const NETLIFY_IDENTITY_API_URL =
-        "https://YOUR-NETLIFY-IDENTITY-SITE.netlify.app/.netlify/identity";
+        "https://markdoyle.netlify.app/.netlify/identity";
 
       const statusEl = document.getElementById("status");
       const setStatus = (msg) => {
@@ -90,11 +90,35 @@
       };
 
       const params = new URLSearchParams(window.location.search || "");
-      const tokenFromQuery = params.get("invite_token");
-      const tokenFromHash = (window.location.hash || "").match(/invite_token=([^&]+)/)?.[1];
-      const inviteToken = tokenFromQuery || tokenFromHash || "";
+      const tokenFromHash = (window.location.hash || "").replace(/^#/, "");
 
-      setStatus(inviteToken ? "Invite token detected." : "Missing invite token.");
+      const inviteToken = params.get("invite_token") || new URLSearchParams(tokenFromHash).get("invite_token") || "";
+      const recoveryToken = params.get("recovery_token") || new URLSearchParams(tokenFromHash).get("recovery_token") || "";
+      const confirmationToken =
+        params.get("confirmation_token") || new URLSearchParams(tokenFromHash).get("confirmation_token") || "";
+
+      const mode = inviteToken ? "invite" : recoveryToken ? "recovery" : confirmationToken ? "confirmation" : "none";
+
+      const subtitleEl = document.getElementById("subtitle");
+      const pwLabelEl = document.getElementById("pw-label");
+      const submitBtnEl = document.getElementById("submit-btn");
+
+      if (mode === "invite") {
+        if (subtitleEl) subtitleEl.textContent = "Set a password to activate your invite.";
+        if (pwLabelEl) pwLabelEl.textContent = "New password";
+        if (submitBtnEl) submitBtnEl.textContent = "Set password";
+        setStatus("Invite token detected.");
+      } else if (mode === "recovery") {
+        if (subtitleEl) subtitleEl.textContent = "Set a new password to recover your account.";
+        if (pwLabelEl) pwLabelEl.textContent = "New password";
+        if (submitBtnEl) submitBtnEl.textContent = "Reset password";
+        setStatus("Recovery token detected.");
+      } else if (mode === "confirmation") {
+        if (subtitleEl) subtitleEl.textContent = "Confirming your email…";
+        setStatus("Confirmation token detected.");
+      } else {
+        setStatus("Missing token. Please use the email link again.");
+      }
 
       let auth;
       async function loadGoTrue() {
@@ -123,10 +147,27 @@
 
       await loadGoTrue();
 
+      async function confirmIfNeeded() {
+        if (mode !== "confirmation") return;
+        try {
+          if (!auth || !auth.confirm) {
+            setStatus("Auth library not ready. Please refresh.");
+            return;
+          }
+          await auth.confirm(decodeURIComponent(confirmationToken), true);
+          setStatus("Confirmed. Redirecting to /admin…");
+          window.location.replace("/admin/");
+        } catch (err) {
+          setStatus(err?.message || "Confirmation failed. Please request a new link.");
+        }
+      }
+
+      await confirmIfNeeded();
+
       document.getElementById("invite-form").addEventListener("submit", async (e) => {
         e.preventDefault();
-        if (!inviteToken) {
-          setStatus("Missing invite token. Please use the invite email link again.");
+        if (mode !== "invite" && mode !== "recovery") {
+          setStatus("Missing token. Please use the email link again.");
           return;
         }
         const pw = document.getElementById("pw").value;
@@ -135,17 +176,37 @@
           setStatus("Passwords don’t match.");
           return;
         }
-        setStatus("Setting password…");
+        setStatus(mode === "recovery" ? "Resetting password…" : "Setting password…");
         try {
           if (!auth) {
             setStatus("Auth library not loaded yet. Please refresh.");
             return;
           }
-          await auth.acceptInvite(decodeURIComponent(inviteToken), pw, true);
+
+          if (mode === "invite") {
+            if (!auth.acceptInvite) {
+              setStatus("Invite not supported by auth library. Please refresh.");
+              return;
+            }
+            await auth.acceptInvite(decodeURIComponent(inviteToken), pw, true);
+          } else {
+            if (!auth.recover) {
+              setStatus("Recovery not supported by auth library. Please refresh.");
+              return;
+            }
+            await auth.recover(decodeURIComponent(recoveryToken), true);
+            const user = auth.currentUser && auth.currentUser();
+            if (!user || !user.update) {
+              setStatus("Recovery completed, but password update failed. Please try again.");
+              return;
+            }
+            await user.update({ password: pw });
+          }
+
           setStatus("Done! Redirecting to /admin…");
           window.location.replace("/admin/");
         } catch (err) {
-          setStatus(err?.message || "Invite failed. Please ask the admin to resend the invite.");
+          setStatus(err?.message || "Action failed. Please request a new link.");
         }
       });
 
