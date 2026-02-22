@@ -56,36 +56,42 @@
   ],
   "competencies": [
     {
-      "name": "Strategic Commercial Leadership",
-      "level": 97
+      "name": "Strategic Leadership & Vision",
+      "evidence": "Proven success in creating and executing end-to-end commercial strategies that position businesses for long-term success in competitive, fast-evolving markets. Strong ability to combine data-driven insights with innovative problem-solving to drive growth."
     },
     {
-      "name": "P&L & Revenue Management",
-      "level": 95
+      "name": "Revenue & Profit Maximisation",
+      "evidence": "Extensive experience in P&L management, driving growth, operational efficiency, and profit optimisation while sustaining competitive advantage."
     },
     {
-      "name": "Team Leadership & Development",
-      "level": 94
+      "name": "High-Impact Team Leadership",
+      "evidence": "Committed to empowering talent, building diverse teams, and embedding a culture of continuous development."
     },
     {
       "name": "Negotiation & Stakeholder Management",
-      "level": 96
+      "evidence": "Skilled in complex negotiations and building strategic, mutually beneficial partnerships with customers, suppliers, and stakeholders."
     },
     {
-      "name": "Business Transformation & M&A",
-      "level": 88
-    },
+      "name": "Business Transformation & Change",
+      "evidence": "Expertise in leading large-scale transformation programmes including M&A, market expansion, and portfolio diversification."
+    }
+  ],
+  "keyAchievements": [
     {
-      "name": "Demand Planning & NPD",
-      "level": 86
+      "name": "Leadership",
+      "evidence": "Led high-performing Commercial teams across PLC, Private Equity supported, and Family-Owned businesses, consistently delivering strong commercial outcomes."
     },
     {
       "name": "Market Strategy & Execution",
-      "level": 93
+      "evidence": "Designed and implemented data-driven strategies that exceeded performance targets and established long-term market leadership."
     },
     {
-      "name": "Category & Channel Expansion",
-      "level": 91
+      "name": "Operational Excellence",
+      "evidence": "Identified and implemented process optimisations that significantly improved efficiency, profitability, and supply chain performance."
+    },
+    {
+      "name": "Innovation & Growth",
+      "evidence": "Delivered Branded and Private Label innovative propositions across customers, channels and regions; drove entry into new markets, significant core business growth and development."
     }
   ],
   "footer": {

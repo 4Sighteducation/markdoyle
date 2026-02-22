@@ -37,9 +37,18 @@ collections:
           - label: "Core competencies"
             name: "competencies"
             widget: "list"
+            summary: "{{fields.name}}"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - { label: "Level (0-100)", name: "level", widget: "number", value_type: "int", min: 0, max: 100 }
+              - { label: "Evidence", name: "evidence", widget: "text" }
+
+          - label: "Key achievements"
+            name: "keyAchievements"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Evidence", name: "evidence", widget: "text" }
 
           - label: "Career history"
             name: "careerHistory"

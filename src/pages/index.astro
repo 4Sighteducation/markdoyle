@@ -48,20 +48,38 @@ const year = new Date().getFullYear();
           </div>
 
           <div style="margin-bottom:48px;">
-            <div class="section-head"><h2>Core Competencies &amp; Key Skills</h2></div>
+            <div class="section-head"><h2>Core Competencies</h2></div>
             <div class="competency-grid">
               {
                 cv.competencies.map((c) => (
                   <div class="competency-item">
                     <div class="competency-name">{c.name}</div>
                     <div class="comp-track">
-                      <div class="comp-fill" style={`width:${Math.max(0, Math.min(100, c.level))}%;`}></div>
+                      <div class="comp-fill" style="width:100%;"></div>
                     </div>
+                    {c.evidence ? <div class="competency-evidence">{c.evidence}</div> : null}
                   </div>
                 ))
               }
             </div>
           </div>
+
+          {cv.keyAchievements?.length ? (
+            <div style="margin-bottom:48px;">
+              <div class="section-head"><h2>Key Achievements</h2></div>
+              <div class="competency-grid">
+                {cv.keyAchievements.map((a) => (
+                  <div class="competency-item">
+                    <div class="competency-name">{a.name}</div>
+                    <div class="comp-track">
+                      <div class="comp-fill" style="width:100%;"></div>
+                    </div>
+                    {a.evidence ? <div class="competency-evidence">{a.evidence}</div> : null}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </div>
 
         <div class="side-col">
