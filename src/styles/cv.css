@@ -571,6 +571,29 @@ body {
     margin-top: 36px;
   }
 
+  /* Print uses full-width flow (sidebar becomes compact block below) */
+  .body-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .main-col {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .side-col {
+    padding-left: 0;
+    padding-top: 22px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 28px;
+  }
+
+  .sidebar-section {
+    margin-bottom: 0;
+  }
+
   .top-rule,
   .red-rule {
     -webkit-print-color-adjust: exact;
