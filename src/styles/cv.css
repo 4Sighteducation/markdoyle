@@ -610,7 +610,8 @@ body {
   .profile-side {
     display: block;
     padding-left: 0;
-    margin-top: 16px;
+    margin-top: 22px;
+    margin-bottom: 8px;
   }
 
   /* Print capability tags just under profile */
@@ -631,24 +632,26 @@ body {
 
   /* Make capability list feel like a deliberate block under the profile */
   .profile-side .section-head {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
 
   /* Print: render capabilities as a clean 2-column bullet list (no boxes) */
   .capability-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6px 28px;
+    gap: 10px 34px;
+    margin-top: 6px;
+    padding-top: 2px;
   }
 
   .capability-tag {
     width: auto;
     border: none;
     background: transparent;
-    padding: 0 0 0 14px;
+    padding: 0 0 0 16px;
     position: relative;
-    font-size: 0.72rem;
-    line-height: 1.35;
+    font-size: 0.9rem;
+    line-height: 1.45;
   }
 
   .section-head {
@@ -659,7 +662,7 @@ body {
     content: "";
     position: absolute;
     left: 0;
-    top: 0.6em;
+    top: 0.7em;
     width: 7px;
     height: 1px;
     background: var(--red);
