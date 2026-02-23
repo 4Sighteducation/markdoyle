@@ -634,18 +634,35 @@ body {
     margin-bottom: 12px;
   }
 
+  /* Print: render capabilities as a clean 2-column bullet list (no boxes) */
+  .capability-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 28px;
+  }
+
   .capability-tag {
-    font-size: 0.7rem;
-    padding: 5px 10px;
+    width: auto;
+    border: none;
+    background: transparent;
+    padding: 0 0 0 14px;
+    position: relative;
+    font-size: 0.72rem;
+    line-height: 1.35;
   }
 
   .section-head {
     margin-bottom: 14px;
   }
 
-  .capability-tag {
-    font-size: 0.68rem;
-    padding: 4px 10px;
+  .capability-tag::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 7px;
+    height: 1px;
+    background: var(--red);
   }
 
   .full-wrap {
