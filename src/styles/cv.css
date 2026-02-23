@@ -530,12 +530,13 @@ body {
    ===================================================== */
 @page {
   size: A4;
-  margin: 0;
+  margin: 10mm;
 }
 
 @media print {
   :root {
-    --page-padding: 26px;
+    /* Inner padding within printed content area */
+    --page-padding: 22px;
   }
 
   html,
@@ -563,7 +564,7 @@ body {
   }
 
   .page {
-    width: 210mm;
+    width: auto;
     margin: 0;
     box-shadow: none;
     border: none;
@@ -582,25 +583,26 @@ body {
   }
 
   .masthead-left h1 {
-    font-size: 4rem;
+    font-size: 4.2rem;
   }
 
   .masthead-divider {
-    margin-top: 28px;
+    margin-top: 24px;
   }
 
   .profile-grid {
-    grid-template-columns: 1fr;
-    margin-top: 28px;
+    grid-template-columns: 1fr 250px;
+    margin-top: 24px;
   }
 
   .profile-main {
-    padding-right: 0;
-    border-right: none;
+    padding-right: 42px;
+    border-right: 1px solid var(--rule);
   }
 
   .profile-side {
-    display: none;
+    display: block;
+    padding-left: 30px;
   }
 
   /* Print capability tags just under profile */
@@ -608,10 +610,15 @@ body {
     display: block !important;
   }
 
+  /* Hide the fallback print-only capability block when sidebar is visible */
+  .capability-print {
+    display: none !important;
+  }
+
   .profile-text {
-    font-size: 0.82rem;
-    line-height: 1.68;
-    margin-bottom: 14px;
+    font-size: 0.8rem;
+    line-height: 1.62;
+    margin-bottom: 12px;
   }
 
   .section-head {
@@ -624,7 +631,7 @@ body {
   }
 
   .full-wrap {
-    margin-top: 22px;
+    margin-top: 18px;
   }
 
   .highlight-list {
@@ -637,7 +644,9 @@ body {
   }
 
   .career-wrap {
-    margin-top: 22px;
+    margin-top: 18px;
+    break-before: page;
+    page-break-before: always;
   }
 
   .role {
@@ -697,7 +706,7 @@ body {
   }
 
   .edu-bottom {
-    margin-top: 18px;
+    margin-top: 16px;
   }
 
   .edu-bottom-grid {
