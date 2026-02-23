@@ -190,7 +190,7 @@ body {
 }
 
 .profile-text {
-  font-size: 0.91rem;
+  font-size: 0.95rem;
   line-height: 1.85;
   color: var(--ink-mid);
   font-weight: 300;
@@ -530,13 +530,14 @@ body {
    ===================================================== */
 @page {
   size: A4;
-  margin: 10mm;
+  /* Full-bleed background; we add our own content padding in print */
+  margin: 0;
 }
 
 @media print {
   :root {
     /* Inner padding within printed content area */
-    --page-padding: 22px;
+    --page-padding: 18px;
   }
 
   html,
@@ -549,6 +550,8 @@ body {
   body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    /* Create “page margins” without reintroducing white borders */
+    padding: 10mm !important;
   }
 
   body::before {
@@ -616,7 +619,7 @@ body {
   }
 
   .profile-text {
-    font-size: 0.8rem;
+    font-size: 0.84rem;
     line-height: 1.62;
     margin-bottom: 12px;
   }
