@@ -471,7 +471,7 @@ body {
 @media print {
   :root {
     /* Condensed print layout to keep content to ~2 pages */
-    --page-padding: 34px;
+    --page-padding: 28px;
   }
 
   html,
@@ -577,11 +577,11 @@ body {
   }
 
   .masthead-left h1 {
-    font-size: 4.8rem;
+    font-size: 4.5rem;
   }
 
   .body-grid {
-    margin-top: 36px;
+    margin-top: 28px;
   }
 
   /* Print uses full-width flow; push sectors/education to the end */
@@ -604,11 +604,54 @@ body {
   }
 
   .meta-wrap {
-    margin-top: 22px;
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 22px;
   }
 
   .meta-block + .meta-block {
+    margin-top: 0;
+  }
+
+  .sector-tag {
+    font-size: 0.62rem;
+    padding: 3px 8px;
+    margin: 0 3px 4px 0;
+  }
+
+  .edu-item {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+  }
+
+  .edu-qual {
+    font-size: 0.78rem;
+  }
+
+  .edu-inst {
+    font-size: 0.7rem;
+  }
+
+  .early-role {
+    padding: 8px 0;
+  }
+
+  .early-company {
+    min-width: 110px;
+  }
+
+  .early-title {
+    font-size: 0.78rem;
+  }
+
+  .early-dates {
+    font-size: 0.68rem;
+  }
+
+  .footer {
     margin-top: 18px;
+    padding: 10px 0 14px;
   }
 
   .top-rule,
