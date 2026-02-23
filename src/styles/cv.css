@@ -12,8 +12,6 @@
   --ink-mid: #3d3d3d;
   --ink-light: #7a7a7a;
   --red: #c0392b;
-  --red-muted: rgba(192, 57, 43, 0.08);
-  --slate: #2c3e50;
   --rule: #d4cfc8;
   --page-padding: 52px;
 }
@@ -31,17 +29,16 @@ body {
 
 body {
   font-family: "DM Sans", sans-serif;
-  background: var(--cream);
+  background: #e8e4dc;
   color: var(--ink);
   min-height: 100vh;
 }
 
-/* A4-ish “page” on desktop so screen == print */
 .page {
-  width: min(210mm, 1200px);
+  width: min(210mm, 1100px);
   margin: 24px auto;
   background: var(--cream);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -49,7 +46,6 @@ body {
   height: 56px;
 }
 
-/* --- TOP RULE --- */
 .top-rule {
   height: 5px;
   background: var(--ink);
@@ -60,7 +56,6 @@ body {
   background: var(--red);
 }
 
-/* --- ACTIONS --- */
 .actions {
   position: sticky;
   top: 0;
@@ -78,15 +73,16 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.18);
   background: rgba(255, 255, 255, 0.7);
   color: var(--ink);
-  padding: 10px 12px;
-  border-radius: 12px;
-  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 0.82rem;
   font-weight: 500;
   cursor: pointer;
+  font-family: "DM Sans", sans-serif;
 }
 
 .print-btn:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 /* --- MASTHEAD --- */
@@ -142,48 +138,10 @@ body {
   font-weight: 400;
 }
 
-/* --- MASTHEAD DIVIDER --- */
 .masthead-divider {
   margin: 44px var(--page-padding) 0;
   border: none;
   border-top: 1px solid var(--ink);
-}
-
-/* --- BODY LAYOUT --- */
-.body-grid {
-  display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 0;
-  padding: 0 var(--page-padding);
-  margin-top: 48px;
-  align-items: start;
-}
-
-.main-col {
-  padding-right: 56px;
-  border-right: 1px solid var(--rule);
-}
-
-.side-col {
-  padding-left: 40px;
-}
-
-.career-wrap {
-  padding: 0 var(--page-padding);
-  margin-top: 56px;
-}
-
-.meta-wrap {
-  padding: 0 var(--page-padding);
-  margin-top: 34px;
-}
-
-.meta-block + .meta-block {
-  margin-top: 26px;
-}
-
-.print-only {
-  display: none;
 }
 
 /* --- SECTION HEADERS --- */
@@ -191,11 +149,11 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 
 .section-head h2 {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -210,51 +168,119 @@ body {
   background: var(--rule);
 }
 
-/* --- PROFILE --- */
-.profile-text {
-  font-size: 0.92rem;
-  line-height: 1.85;
-  color: var(--ink-mid);
-  font-weight: 300;
-  margin-bottom: 0;
-}
-
 /* =====================================================
-   SUMMARY: Professional Summary + Education (2-col)
+   ZONE 1: Executive Profile + Capability sidebar
    ===================================================== */
-.summary-grid {
+.profile-grid {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr 260px;
   gap: 0;
   padding: 0 var(--page-padding);
-  margin-top: 48px;
+  margin-top: 44px;
   align-items: start;
 }
 
-.summary-left {
-  padding-right: 56px;
+.profile-main {
+  padding-right: 52px;
   border-right: 1px solid var(--rule);
 }
 
-.summary-right {
-  padding-left: 40px;
+.profile-side {
+  padding-left: 38px;
 }
 
-.section-pad {
+.profile-text {
+  font-size: 0.91rem;
+  line-height: 1.85;
+  color: var(--ink-mid);
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.profile-text + .profile-text {
+  margin-top: 0;
+}
+
+.sidebar-section {
+  margin-bottom: 32px;
+}
+
+.sidebar-section:last-child {
+  margin-bottom: 0;
+}
+
+.capability-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 0;
+}
+
+.capability-tag {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--ink-mid);
+  border: 1px solid var(--rule);
+  padding: 5px 10px;
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* =====================================================
+   ZONE 2: Career Highlights — full width
+   ===================================================== */
+.full-wrap {
   padding: 0 var(--page-padding);
   margin-top: 44px;
 }
 
-/* --- ROLES --- */
+.highlight-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 48px;
+  align-items: start;
+}
+
+.highlight-list li {
+  font-size: 0.83rem;
+  line-height: 1.68;
+  color: var(--ink-mid);
+  font-weight: 300;
+  padding-left: 14px;
+  position: relative;
+}
+
+.highlight-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 1px;
+  background: var(--red);
+}
+
+/* =====================================================
+   ZONE 3: Professional Experience — full width
+   ===================================================== */
+.career-wrap {
+  padding: 0 var(--page-padding);
+  margin-top: 44px;
+}
+
 .role {
-  margin-bottom: 40px;
-  padding-bottom: 40px;
+  margin-bottom: 36px;
+  padding-bottom: 36px;
   border-bottom: 1px solid var(--cream-dark);
-  break-inside: avoid;
 }
 
 .role:last-of-type {
   border-bottom: none;
+}
+
+.role-header {
+  margin-bottom: 12px;
 }
 
 .role-meta {
@@ -266,7 +292,7 @@ body {
 }
 
 .role-company {
-  font-size: 0.68rem;
+  font-size: 0.67rem;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -274,7 +300,7 @@ body {
 }
 
 .role-dates {
-  font-size: 0.73rem;
+  font-size: 0.72rem;
   color: var(--ink-light);
   font-weight: 300;
   white-space: nowrap;
@@ -282,11 +308,28 @@ body {
 
 .role-title {
   font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--ink);
-  margin-bottom: 14px;
+  margin-bottom: 6px;
   line-height: 1.2;
+}
+
+.role-summary {
+  font-size: 0.85rem;
+  line-height: 1.72;
+  color: var(--ink-mid);
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.impact-label {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 10px;
 }
 
 .role-points {
@@ -294,13 +337,13 @@ body {
 }
 
 .role-points li {
-  font-size: 0.84rem;
-  line-height: 1.75;
+  font-size: 0.83rem;
+  line-height: 1.72;
   color: var(--ink-mid);
   font-weight: 300;
   padding-left: 14px;
   position: relative;
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 .role-points li::before {
@@ -313,120 +356,107 @@ body {
   background: var(--red);
 }
 
-/* --- COMPETENCIES --- */
-.competency-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px 40px;
-  margin-bottom: 48px;
+.role-points .sub-points {
+  list-style: none;
+  margin: 4px 0 4px 14px;
 }
 
-.competency-item {
-  margin-bottom: 14px;
-}
-
-.competency-name {
+.role-points .sub-points li {
   font-size: 0.8rem;
-  font-weight: 400;
-  color: var(--ink);
-  margin-bottom: 5px;
-  line-height: 1.3;
+  margin-bottom: 2px;
+  padding-left: 12px;
 }
 
-.competency-evidence {
-  margin-top: 10px;
-  font-size: 0.84rem;
-  line-height: 1.7;
+.role-points .sub-points li::before {
+  width: 3px;
+  top: 9px;
+  background: var(--rule);
+}
+
+/* Earlier Career */
+.early-career {
+  margin-top: 36px;
+}
+
+.early-intro {
+  font-size: 0.83rem;
   color: var(--ink-mid);
   font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 18px;
 }
 
-.comp-track {
-  height: 1px;
-  background: var(--rule);
-  position: relative;
-}
-
-.comp-fill {
-  height: 1px;
-  background: var(--ink);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* --- EARLY CAREER --- */
-.early-career {
-  margin-top: 40px;
+.early-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 48px;
 }
 
 .early-role {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
-  padding: 12px 0;
+  gap: 10px;
+  padding: 8px 0;
   border-bottom: 1px solid var(--cream-dark);
-  gap: 16px;
 }
 
-.early-role:last-child {
-  border-bottom: none;
+.early-role:nth-child(odd):last-child {
+  grid-column: 1 / -1;
 }
 
 .early-company {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--red);
-  min-width: 130px;
+  white-space: nowrap;
+}
+
+.early-divider {
+  width: 1px;
+  height: 10px;
+  background: var(--rule);
+  flex-shrink: 0;
 }
 
 .early-title {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--ink-mid);
-  flex: 1;
   font-weight: 300;
 }
 
 .early-dates {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--ink-light);
   font-weight: 300;
-  white-space: nowrap;
 }
 
-/* --- SIDEBAR --- */
-.sidebar-section {
-  margin-bottom: 40px;
-  break-inside: avoid;
+/* EDUCATION — bottom strip */
+.edu-bottom {
+  padding: 0 var(--page-padding);
+  margin-top: 40px;
 }
 
-.sector-tag {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 400;
-  color: var(--ink-mid);
-  border: 1px solid var(--rule);
-  padding: 4px 10px;
-  margin: 0 4px 6px 0;
-  letter-spacing: 0.05em;
+.edu-bottom-grid {
+  display: flex;
+  gap: 48px;
 }
 
 .edu-item {
-  margin-bottom: 18px;
-  padding-bottom: 18px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--cream-dark);
 }
 
-.edu-item:last-child {
+.edu-bottom .edu-item {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
 .edu-qual {
-  font-size: 0.82rem;
+  font-size: 0.81rem;
   font-weight: 500;
   color: var(--ink);
   line-height: 1.3;
@@ -434,24 +464,23 @@ body {
 }
 
 .edu-inst {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   color: var(--ink-light);
   font-weight: 300;
 }
 
 /* --- FOOTER --- */
 .footer {
-  margin: 48px var(--page-padding) 0;
-  padding: 20px 0 28px;
+  margin: 44px var(--page-padding) 0;
+  padding: 18px 0 28px;
   border-top: 1px solid var(--ink);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
 }
 
 .footer-text {
-  font-size: 0.68rem;
+  font-size: 0.67rem;
   color: var(--ink-light);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -459,20 +488,20 @@ body {
 
 .footer-name {
   font-family: "Playfair Display", serif;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-style: italic;
   color: var(--ink-light);
 }
 
-/* --- ANIMATIONS --- */
-.fade-in {
-  animation: fadeIn 0.7s ease-out both;
+.print-only {
+  display: none;
 }
 
+/* --- ANIMATIONS (screen only) --- */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -484,11 +513,21 @@ body {
   animation: fadeIn 0.5s ease-out;
 }
 
-.body-grid {
-  animation: fadeIn 0.6s 0.1s ease-out both;
+.profile-grid {
+  animation: fadeIn 0.55s 0.05s ease-out both;
 }
 
-/* --- PRINT --- */
+.full-wrap {
+  animation: fadeIn 0.55s 0.1s ease-out both;
+}
+
+.career-wrap {
+  animation: fadeIn 0.55s 0.15s ease-out both;
+}
+
+/* =====================================================
+   PRINT
+   ===================================================== */
 @page {
   size: A4;
   margin: 0;
@@ -496,8 +535,7 @@ body {
 
 @media print {
   :root {
-    /* Condensed print layout to keep content to ~2 pages */
-    --page-padding: 28px;
+    --page-padding: 26px;
   }
 
   html,
@@ -512,7 +550,6 @@ body {
     print-color-adjust: exact;
   }
 
-  /* Paint a full-page background so the PDF stays consistent even below content */
   body::before {
     content: "";
     position: fixed;
@@ -527,12 +564,9 @@ body {
 
   .page {
     width: 210mm;
-    min-height: auto;
-    height: auto;
     margin: 0;
     box-shadow: none;
     border: none;
-    overflow: visible;
     background: var(--cream);
   }
 
@@ -541,146 +575,146 @@ body {
     height: 0 !important;
   }
 
-  /* Allow natural flow to avoid forcing extra pages */
-  .career-wrap {
-    break-before: auto;
-    page-break-before: auto;
-    margin-top: 26px;
+  .top-rule,
+  .red-rule {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
-  /* Pack roles tighter to avoid “blank bands” and extra pages */
-  .section-head {
-    margin-bottom: 18px;
+  .masthead-left h1 {
+    font-size: 4rem;
+  }
+
+  .masthead-divider {
+    margin-top: 28px;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+    margin-top: 28px;
+  }
+
+  .profile-main {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .profile-side {
+    display: none;
+  }
+
+  /* Print capability tags just under profile */
+  .print-only {
+    display: block !important;
   }
 
   .profile-text {
-    font-size: 0.86rem;
-    line-height: 1.7;
+    font-size: 0.82rem;
+    line-height: 1.68;
+    margin-bottom: 14px;
   }
 
-  .summary-grid {
-    grid-template-columns: 1fr 300px;
-    margin-top: 32px;
+  .section-head {
+    margin-bottom: 14px;
   }
 
-  .summary-left {
-    padding-right: 42px;
+  .capability-tag {
+    font-size: 0.68rem;
+    padding: 4px 10px;
   }
 
-  .summary-right {
-    padding-left: 30px;
+  .full-wrap {
+    margin-top: 22px;
   }
 
-  .section-pad {
-    margin-top: 26px;
+  .highlight-list {
+    gap: 8px 36px;
   }
 
-  .competency-grid {
-    margin-bottom: 32px;
-    gap: 10px 28px;
+  .highlight-list li {
+    font-size: 0.78rem;
+    line-height: 1.58;
+  }
+
+  .career-wrap {
+    margin-top: 22px;
   }
 
   .role {
-    margin-bottom: 22px;
-    padding-bottom: 22px;
-    /* Allow splitting across pages to avoid huge gaps */
+    margin-bottom: 20px;
+    padding-bottom: 20px;
     break-inside: auto;
     page-break-inside: auto;
   }
 
   .role-title {
+    font-size: 1.2rem;
+  }
+
+  .role-summary {
+    font-size: 0.79rem;
+    line-height: 1.6;
     margin-bottom: 10px;
-    font-size: 1.3rem;
   }
 
   .role-points li {
-    margin-bottom: 5px;
-    font-size: 0.8rem;
-    line-height: 1.6;
+    font-size: 0.77rem;
+    line-height: 1.56;
+    margin-bottom: 4px;
+  }
+
+  .role-points .sub-points li {
+    font-size: 0.74rem;
   }
 
   .early-career {
-    margin-top: 26px;
+    margin-top: 20px;
   }
 
-  .footer {
-    margin-top: 28px;
-    padding: 14px 0 18px;
-  }
-
-  .competency-evidence {
-    margin-top: 8px;
-    font-size: 0.78rem;
-    line-height: 1.55;
-  }
-
-  .competency-name {
-    font-size: 0.78rem;
-  }
-
-  .masthead-left h1 {
-    font-size: 4.5rem;
-  }
-
-  .print-only {
-    display: block !important;
-  }
-
-  .meta-wrap {
-    margin-top: 18px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px 22px;
-  }
-
-  .meta-block + .meta-block {
-    margin-top: 0;
-  }
-
-  .sector-tag {
-    font-size: 0.62rem;
-    padding: 3px 8px;
-    margin: 0 3px 4px 0;
-  }
-
-  .edu-item {
+  .early-intro {
+    font-size: 0.77rem;
     margin-bottom: 12px;
-    padding-bottom: 12px;
   }
 
-  .edu-qual {
-    font-size: 0.78rem;
-  }
-
-  .edu-inst {
-    font-size: 0.7rem;
+  .early-grid {
+    gap: 4px 36px;
   }
 
   .early-role {
-    padding: 8px 0;
+    padding: 6px 0;
   }
 
   .early-company {
-    min-width: 110px;
+    font-size: 0.64rem;
   }
 
   .early-title {
-    font-size: 0.78rem;
+    font-size: 0.73rem;
   }
 
   .early-dates {
-    font-size: 0.68rem;
+    font-size: 0.66rem;
+  }
+
+  .edu-bottom {
+    margin-top: 18px;
+  }
+
+  .edu-bottom-grid {
+    gap: 36px;
+  }
+
+  .edu-qual {
+    font-size: 0.74rem;
+  }
+
+  .edu-inst {
+    font-size: 0.66rem;
   }
 
   .footer {
-    margin-top: 18px;
-    padding: 10px 0 14px;
-  }
-
-  .top-rule,
-  .red-rule {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    margin-top: 14px;
+    padding: 10px 0 12px;
   }
 
   @keyframes fadeIn {
@@ -695,10 +729,12 @@ body {
   }
 }
 
-/* --- RESPONSIVE (screen only; keep print as desktop layout) --- */
-@media screen and (max-width: 900px) {
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media screen and (max-width: 860px) {
   :root {
-    --page-padding: 28px;
+    --page-padding: 24px;
   }
 
   .page {
@@ -709,51 +745,61 @@ body {
   }
 
   .masthead {
-    padding: 36px var(--page-padding) 0;
+    padding: 32px var(--page-padding) 0;
     flex-direction: column;
   }
 
   .masthead-left h1 {
-    font-size: 3.6rem;
+    font-size: 3.4rem;
   }
 
   .masthead-right {
     border-left: none;
     padding-left: 0;
     border-top: 1px solid var(--rule);
-    padding-top: 20px;
-    margin-top: 20px;
+    padding-top: 16px;
+    margin-top: 16px;
   }
 
   .masthead-divider {
-    margin: 32px var(--page-padding) 0;
+    margin: 24px var(--page-padding) 0;
   }
 
-  .summary-grid {
+  .profile-grid {
     grid-template-columns: 1fr;
     padding: 0 var(--page-padding);
     margin-top: 32px;
   }
 
-  .summary-left {
+  .profile-main {
     padding-right: 0;
     border-right: none;
     border-bottom: 1px solid var(--rule);
     padding-bottom: 32px;
   }
 
-  .summary-right {
+  .profile-side {
     padding-left: 0;
     padding-top: 32px;
   }
 
-  .section-pad {
+  .full-wrap,
+  .career-wrap,
+  .edu-bottom {
     padding: 0 var(--page-padding);
-    margin-top: 32px;
   }
 
-  .competency-grid {
+  .highlight-list {
     grid-template-columns: 1fr;
+  }
+
+  .early-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-bottom-grid {
+    flex-direction: column;
+    gap: 16px;
   }
 
   .footer {

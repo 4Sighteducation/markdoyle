@@ -1,20 +1,8 @@
 {
-  "education": [
-    {
-      "qualification": "B.A. Hons, Economics and Business Management",
-      "institution": "Leeds Trinity Collage"
-    },
-    {
-      "qualification": "A ‘level Economics, Law and Business Studies",
-      "institution": "Llandrillo Collage, N.Wales"
-    },
-    {
-      "qualification": "GCSE 9 passes, 7 grade A-C",
-      "institution": "Blessed Edward Jones HS, Rhyl, N. Wales."
-    }
-  ],
-  "profile": "An accomplished Commercial Director with a strong track record of driving profitable growth and delivering transformational results across CPG branded and own-label businesses. Skilled in leading high-performing teams across Sales, Demand Planning and NPD. Combining data-driven insight with innovative problem solving to deliver measurable, sustainable results in competitive, fast evolving Markets.",
-  "sectors": [],
+  "seo": {
+    "title": "Mark Doyle – Commercial Director",
+    "description": "Commercial Director · UK & Ireland"
+  },
   "masthead": {
     "firstName": "Mark",
     "lastName": "Doyle",
@@ -22,112 +10,94 @@
     "phone": "07758 119516",
     "email": "Doylemj96@gmail.com"
   },
-  "careerHistory": [
+  "executiveProfileHeading": "Executive Profile",
+  "executiveProfile": [
+    "Commercial Board-level leader with full P&L accountability and a proven track record of delivering accelerated revenue growth, margin expansion, and business transformation across branded and private-label CPG organisations.",
+    "Experienced operating within PLC, Private Equity-backed, and family-owned structures, partnering closely with investors and executive boards to define and execute long-term value creation strategies. Recognised for building high-performing leadership teams, driving market expansion, and delivering sustainable competitive advantage in complex, fast-evolving markets."
+  ],
+  "capabilities": [
+    "Enterprise-wide Commercial Strategy & Execution",
+    "Full P&L Ownership (Revenue >£500m)",
+    "Investor & Private Equity Engagement",
+    "M&A Integration & Value Creation",
+    "Organisational Transformation",
+    "Category & Channel Expansion",
+    "Strategic Customer Partnerships",
+    "High-Performance Team Leadership",
+    "Data-Led Decision Making & Governance Reporting"
+  ],
+  "careerHighlights": [
+    "Delivered sustained double-digit revenue growth across multiple businesses, scaling revenues from £335m to £575m within three years in latest role.",
+    "Developed and executed 5-year commercial growth strategies covering core optimisation, channel diversification, regional expansion, and acquisition opportunities.",
+    "Significant contributor to revenue growth at McCain Foods, supporting growth from £511m to £713m.",
+    "Led large-scale commercial transformation programmes aligning Sales, Demand Planning, and NPD into integrated growth engines.",
+    "Regularly reported to and aligned with Private Equity shareholders on strategic performance, governance, and long-term value creation."
+  ],
+  "professionalExperience": [
     {
       "company": "Fullers Foods",
       "dates": "April 2023 – October 2025",
-      "title": "Commercial Director – UK & Ireland",
-      "points": [
-        "Responsible for leading the Sales, NPD and Demand Planning functions consisting of 30 internal colleagues whilst engaging with numerous external partners/stakeholders.",
-        "Delivered YOY Volume and Value growth ahead of the Market - Companies Hse. Info. - 2022 £335m, 2023 £411m, 2024 £533m with 2025 expected £575m.",
-        "Developed and executed a 5-year commercial strategy focused on growing Core business, Channel and Category expansion, regional expansion, Acquisitional opportunities, Brand distribution/development and Operational effectiveness.",
-        "Created new ways of working across the three key Commercial functions that supported the growth plan whilst delivering improved alignment, operational efficiency, high executional standards and Customer relationships.",
-        "Responsible for providing regular commercial updates to Private Equity Shareholders and working with this group to ensure alignment to Commercial plans in delivering the overall business objectives."
+      "title": "Commercial Director — UK & Ireland",
+      "summary": "Board-level commercial leader with accountability for Sales, NPD, and Demand Planning (30 FTEs) and full commercial performance across UK & Ireland.",
+      "impact": [
+        {
+          "text": "Delivered accelerated revenue growth:",
+          "subPoints": ["2022: £335m", "2023: £411m", "2024: £533m", "2025 (forecast): £575m"]
+        },
+        {
+          "text": "Designed and implemented a 5-year strategic growth roadmap focused on core business acceleration, channel and category expansion, regional and international growth, acquisition pipeline development, brand portfolio optimisation, and operational efficiency improvement."
+        },
+        { "text": "Re-engineered commercial operating model to improve cross-functional execution and governance." },
+        { "text": "Led investor communications on commercial strategy and performance, ensuring alignment with shareholder value objectives." }
       ]
     },
     {
       "company": "McCain Foods",
       "dates": "October 2017 - October 2022 Retail, October 2022 - March 2023 FS",
-      "title": "Customer Development Director – UK and Ireland",
-      "points": [
-        "Performed as a key member of the McCain Retail and FS leadership team working cross functionally with Marketing, Category and Operational teams to develop organisational structures, strategies, Customer engagement, execution plans and Individual/Team performance to ensure delivery of the Brand, Channel and overall business objectives.",
-        "Led teams across Sales and Demand Planning delivering growth in Market Share (UK/Ire), Volume and Value growth while optimising investment. Through our teams we delivered best in class Customer Engagement which had a significant contribution to the successful implementation of our plans, proposition development/execution, Category initiatives and delivery and implementation of Brand Plans.",
-        "McCain GB revenue 2017 £511m, McCain GB revenue 2023 £713m (Companies Hse. Info)"
+      "title": "Customer Development Director — UK & Ireland",
+      "summary": "Senior commercial leader within the UK & Ireland executive structure, accountable for strategic customer partnerships, revenue delivery, and demand planning integration.",
+      "impact": [
+        { "text": "Contributed to revenue growth from £511m to £713m." },
+        { "text": "Delivered market share, volume, and value growth across retail and foodservice channels." },
+        { "text": "Strengthened executive cross-functional alignment across Marketing, Category, Supply Chain, and Operations." },
+        { "text": "Elevated customer engagement standards and long-term joint business planning capability." }
       ]
-    }
-  ],
-  "competencies": [
-    {
-      "name": "Strategic Commercial Leadership",
-      "evidence": "Defines and delivers end to end commercial strategy aligned to growth, profitability, and long-term market position in competitive fast-changing markets."
-    },
-    {
-      "name": "P&L Ownership and Profit Growth",
-      "evidence": "Strong track record of full P&L accountability, driving revenue growth, margin improvement and operational efficiency."
-    },
-    {
-      "name": "Executive Team Leadership",
-      "evidence": "Builds, leads and develops high performing cross functional teams, creating a culture of accountability, collaboration and continuous improvement."
-    },
-    {
-      "name": "Negotiation & Strategic Partnerships",
-      "evidence": "Experienced in complex commercial negotiations and stakeholder management, securing mutually beneficial outcomes across customers, suppliers and partners."
-    },
-    {
-      "name": "Business Transformation & Change",
-      "evidence": "Leads large scale transformation programmes including M&A integration, market expansion, portfolio optimisation and organisational change."
-    },
-    {
-      "name": "Data-Driven Decision Making",
-      "evidence": "Uses commercial insight, market intelligence, and performance data to shape strategy and improve execution."
-    }
-  ],
-  "keyAchievements": [
-    {
-      "name": "Leadership",
-      "evidence": "Led high-performing Commercial teams across PLC, Private Equity supported, and Family-Owned businesses, delivering sustained revenue growth and improved commercial performance."
-    },
-    {
-      "name": "Market Strategy & Execution",
-      "evidence": "Developed and executed data-led market strategies that exceeded growth targets and strengthened long-term competitive positioning."
-    },
-    {
-      "name": "Operational Improvement",
-      "evidence": "Identified and implemented process and supply chain improvements that increased efficiency, improved service performance and enhanced profitability."
-    },
-    {
-      "name": "Innovation & Growth",
-      "evidence": "Delivered innovative branded and private-label propositions across multiple customers, channels, and regions, driving entry into new markets and significant growth in core business performance."
     }
   ],
   "footer": {
     "left": "Confidential — Mark Doyle",
     "right": "Mark Doyle"
   },
-  "seo": {
-    "title": "Mark Doyle – Commercial Director",
-    "description": "Commercial Director · UK & Ireland"
-  },
+  "earlierCareerIntro": "Progressive commercial leadership roles across major UK FMCG organisations. Developed deep expertise across grocery multiples, wholesale, and convenience channels.",
   "earlierCareer": [
     {
       "company": "Baxters Food Group",
-      "title": "Retail National Account Controller - All Grocery Retail Customers",
-      "dates": "Oct 2013 – Oct 2017"
+      "title": "Retail National Account Controller"
     },
     {
       "company": "Princes Ltd",
-      "title": "Retail National Account Controller (one year as SNAM Tesco, 3 years Controller, Asda, Coop, Aldi)",
-      "dates": "July 2009 – Oct 2013"
+      "title": "Retail National Account Controller"
     },
     {
       "company": "Premier Foods",
-      "title": "Senior NAM, Tesco",
-      "dates": "Jan 2008 – July 2009"
+      "title": "Senior National Account Manager"
     },
     {
       "company": "Northern Foods",
-      "title": "National Account manager, Morrisons, JS, Coop",
-      "dates": "Jan 2007 – Jan 2008"
+      "title": "National Account Manager"
     },
     {
       "company": "Cadbury Trebor Bassett",
-      "title": "Various account management and people management roles, across Retail, Field Sales and C&C/Wholesale",
-      "dates": "May 2000 – Jan 2007"
+      "title": "Account & Field Sales Leadership"
     },
     {
-      "company": "Imperial Tobacco (Now Imperial Brands)",
-      "title": "Territory representative responsible for calling on 300 independent retailers in the Manchester Area.",
+      "company": "Imperial Tobacco",
+      "title": "Territory Representative",
       "dates": "1998 – 2000"
     }
+  ],
+  "educationBottom": [
+    { "qualification": "BA (Hons) — Economics & Business Management", "institution": "Leeds Trinity College" },
+    { "qualification": "A Levels — Economics, Law & Business Studies", "institution": "Llandrillo College, North Wales" }
   ]
 }

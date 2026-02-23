@@ -32,47 +32,57 @@ collections:
               - { label: "Phone", name: "phone", widget: "string", required: false }
               - { label: "Email", name: "email", widget: "string", required: false }
 
-          - { label: "Profile", name: "profile", widget: "text" }
+          - { label: "Executive Profile heading", name: "executiveProfileHeading", widget: "string", default: "Executive Profile" }
 
-          - label: "Core competencies"
-            name: "competencies"
+          - label: "Executive Profile (paragraphs)"
+            name: "executiveProfile"
             widget: "list"
-            summary: "{{fields.name}}"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Evidence", name: "evidence", widget: "text" }
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
 
-          - label: "Key achievements"
-            name: "keyAchievements"
+          - label: "Board & Executive Capability (tags)"
+            name: "capabilities"
             widget: "list"
-            summary: "{{fields.name}}"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Evidence", name: "evidence", widget: "text" }
+            field: { label: "Capability", name: "capability", widget: "string" }
 
-          - label: "Career history"
-            name: "careerHistory"
+          - label: "Career Highlights"
+            name: "careerHighlights"
             widget: "list"
+            field: { label: "Highlight", name: "highlight", widget: "text" }
+
+          - label: "Professional Experience"
+            name: "professionalExperience"
+            widget: "list"
+            summary: "{{fields.company}} — {{fields.title}}"
             fields:
               - { label: "Company", name: "company", widget: "string" }
               - { label: "Dates", name: "dates", widget: "string" }
               - { label: "Role title", name: "title", widget: "string" }
-              - label: "Bullet points"
-                name: "points"
+              - { label: "Role summary", name: "summary", widget: "text", required: false }
+              - label: "Impact & scope bullets"
+                name: "impact"
                 widget: "list"
-                summary: "{{fields.point}}"
-                field: { label: "Point", name: "point", widget: "text" }
+                summary: "{{fields.text}}"
+                fields:
+                  - { label: "Bullet text", name: "text", widget: "text" }
+                  - label: "Sub-points (optional)"
+                    name: "subPoints"
+                    widget: "list"
+                    required: false
+                    field: { label: "Sub-point", name: "sub", widget: "string" }
 
           - label: "Earlier career"
             name: "earlierCareer"
             widget: "list"
+            summary: "{{fields.company}}"
             fields:
               - { label: "Company", name: "company", widget: "string" }
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Dates", name: "dates", widget: "string" }
+              - { label: "Dates", name: "dates", widget: "string", required: false }
+
+          - { label: "Earlier career intro", name: "earlierCareerIntro", widget: "text", required: false }
 
           - label: "Education"
-            name: "education"
+            name: "educationBottom"
             widget: "list"
             fields:
               - { label: "Qualification", name: "qualification", widget: "string" }
