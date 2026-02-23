@@ -173,6 +173,19 @@ body {
   margin-top: 56px;
 }
 
+.meta-wrap {
+  padding: 0 var(--page-padding);
+  margin-top: 34px;
+}
+
+.meta-block + .meta-block {
+  margin-top: 26px;
+}
+
+.print-only {
+  display: none;
+}
+
 /* --- SECTION HEADERS --- */
 .section-head {
   display: flex;
@@ -571,7 +584,7 @@ body {
     margin-top: 36px;
   }
 
-  /* Print uses full-width flow (sidebar becomes compact block below) */
+  /* Print uses full-width flow; push sectors/education to the end */
   .body-grid {
     grid-template-columns: 1fr;
     gap: 0;
@@ -583,15 +596,19 @@ body {
   }
 
   .side-col {
-    padding-left: 0;
-    padding-top: 22px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px 28px;
+    display: none !important;
   }
 
-  .sidebar-section {
-    margin-bottom: 0;
+  .print-only {
+    display: block !important;
+  }
+
+  .meta-wrap {
+    margin-top: 22px;
+  }
+
+  .meta-block + .meta-block {
+    margin-top: 18px;
   }
 
   .top-rule,

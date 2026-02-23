@@ -138,6 +138,27 @@ const year = new Date().getFullYear();
         </div>
       </section>
 
+      <section class="meta-wrap print-only" aria-label="Additional details">
+        <div class="meta-block">
+          <div class="section-head"><h2>Sectors</h2></div>
+          <div>
+            {cv.sectors.map((s) => (
+              <span class="sector-tag">{s}</span>
+            ))}
+          </div>
+        </div>
+
+        <div class="meta-block">
+          <div class="section-head"><h2>Education</h2></div>
+          {cv.education.map((ed) => (
+            <div class="edu-item">
+              <div class="edu-qual">{ed.qualification}</div>
+              <div class="edu-inst">{ed.institution}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <footer class="footer">
         <div class="footer-text">
           {cv.footer.left} · {year}
