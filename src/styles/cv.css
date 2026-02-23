@@ -596,19 +596,21 @@ body {
     margin-top: 24px;
   }
 
+  /* Rebalance page 1: stack capability under profile */
   .profile-grid {
-    grid-template-columns: 1fr 250px;
+    grid-template-columns: 1fr;
     margin-top: 24px;
   }
 
   .profile-main {
-    padding-right: 42px;
-    border-right: 1px solid var(--rule);
+    padding-right: 0;
+    border-right: none;
   }
 
   .profile-side {
     display: block;
-    padding-left: 30px;
+    padding-left: 0;
+    margin-top: 16px;
   }
 
   /* Print capability tags just under profile */
@@ -622,9 +624,19 @@ body {
   }
 
   .profile-text {
-    font-size: 0.84rem;
-    line-height: 1.62;
+    font-size: 0.9rem;
+    line-height: 1.68;
     margin-bottom: 12px;
+  }
+
+  /* Make capability list feel like a deliberate block under the profile */
+  .profile-side .section-head {
+    margin-bottom: 12px;
+  }
+
+  .capability-tag {
+    font-size: 0.7rem;
+    padding: 5px 10px;
   }
 
   .section-head {
