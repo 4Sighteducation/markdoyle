@@ -40,69 +40,58 @@ const year = new Date().getFullYear();
 
       <hr class="masthead-divider" />
 
-      <div class="body-grid">
-        <div class="main-col">
-          <div style="margin-bottom:40px;">
-            <div class="section-head"><h2>Profile</h2></div>
-            <p class="profile-text">{cv.profile}</p>
-          </div>
-
-          <div style="margin-bottom:48px;">
-            <div class="section-head"><h2>Core Competencies</h2></div>
-            <div class="competency-grid">
-              {
-                cv.competencies.map((c) => (
-                  <div class="competency-item">
-                    <div class="competency-name">{c.name}</div>
-                    <div class="comp-track">
-                      <div class="comp-fill" style="width:100%;"></div>
-                    </div>
-                    {c.evidence ? <div class="competency-evidence">{c.evidence}</div> : null}
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-
-          {cv.keyAchievements?.length ? (
-            <div style="margin-bottom:48px;">
-              <div class="section-head"><h2>Key Achievements</h2></div>
-              <div class="competency-grid">
-                {cv.keyAchievements.map((a) => (
-                  <div class="competency-item">
-                    <div class="competency-name">{a.name}</div>
-                    <div class="comp-track">
-                      <div class="comp-fill" style="width:100%;"></div>
-                    </div>
-                    {a.evidence ? <div class="competency-evidence">{a.evidence}</div> : null}
-                  </div>
-                ))}
-              </div>
-            </div>
-          ) : null}
+      <section class="summary-grid">
+        <div class="summary-left">
+          <div class="section-head"><h2>Professional Summary</h2></div>
+          <p class="profile-text">{cv.profile}</p>
         </div>
 
-        <div class="side-col">
-          <div class="sidebar-section">
-            <div class="section-head"><h2>Sectors</h2></div>
-            <div>
-              {cv.sectors.map((s) => (
-                <span class="sector-tag">{s}</span>
+        <div class="summary-right">
+          <div class="section-head"><h2>Education</h2></div>
+          {cv.education.map((ed) => (
+            <div class="edu-item">
+              <div class="edu-qual">{ed.qualification}</div>
+              <div class="edu-inst">{ed.institution}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="section-pad">
+        <div style="margin-bottom:40px;">
+          <div class="section-head"><h2>Core Competencies</h2></div>
+          <div class="competency-grid">
+            {
+              cv.competencies.map((c) => (
+                <div class="competency-item">
+                  <div class="competency-name">{c.name}</div>
+                  <div class="comp-track">
+                    <div class="comp-fill" style="width:100%;"></div>
+                  </div>
+                  {c.evidence ? <div class="competency-evidence">{c.evidence}</div> : null}
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        {cv.keyAchievements?.length ? (
+          <div style="margin-bottom:40px;">
+            <div class="section-head"><h2>Key Achievements</h2></div>
+            <div class="competency-grid">
+              {cv.keyAchievements.map((a) => (
+                <div class="competency-item">
+                  <div class="competency-name">{a.name}</div>
+                  <div class="comp-track">
+                    <div class="comp-fill" style="width:100%;"></div>
+                  </div>
+                  {a.evidence ? <div class="competency-evidence">{a.evidence}</div> : null}
+                </div>
               ))}
             </div>
           </div>
-
-          <div class="sidebar-section">
-            <div class="section-head"><h2>Education</h2></div>
-            {cv.education.map((ed) => (
-              <div class="edu-item">
-                <div class="edu-qual">{ed.qualification}</div>
-                <div class="edu-inst">{ed.institution}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+        ) : null}
+      </section>
 
       <section class="career-wrap">
         <div class="section-head"><h2>Career History</h2></div>
@@ -135,27 +124,6 @@ const year = new Date().getFullYear();
               </div>
             ))
           }
-        </div>
-      </section>
-
-      <section class="meta-wrap print-only" aria-label="Additional details">
-        <div class="meta-block">
-          <div class="section-head"><h2>Sectors</h2></div>
-          <div>
-            {cv.sectors.map((s) => (
-              <span class="sector-tag">{s}</span>
-            ))}
-          </div>
-        </div>
-
-        <div class="meta-block">
-          <div class="section-head"><h2>Education</h2></div>
-          {cv.education.map((ed) => (
-            <div class="edu-item">
-              <div class="edu-qual">{ed.qualification}</div>
-              <div class="edu-inst">{ed.institution}</div>
-            </div>
-          ))}
         </div>
       </section>
 
