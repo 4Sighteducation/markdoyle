@@ -211,12 +211,15 @@ body {
 
 .capability-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
   margin-bottom: 0;
 }
 
 .capability-tag {
+  display: block;
+  width: 100%;
   font-size: 0.72rem;
   font-weight: 400;
   color: var(--ink-mid);
