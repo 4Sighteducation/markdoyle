@@ -1,8 +1,68 @@
 {
-  "seo": {
-    "title": "Mark Doyle – Commercial Director",
-    "description": "Commercial Director · UK & Ireland"
-  },
+  "executiveProfile": [
+    "Commercial Board-level leader with full P&L accountability and a proven track record of delivering accelerated revenue growth, margin expansion, and business transformation across branded and private-label CPG organisations.",
+    "Experienced operating within PLC, Private Equity-backed, and family-owned structures, partnering closely with investors and executive boards to define and execute long-term value creation strategies. Recognised for building high-performing leadership teams, driving market expansion, and delivering sustainable competitive advantage in complex, fast-evolving markets."
+  ],
+  "executiveProfileHeading": "Executive Profile",
+  "earlierCareerIntro": "Progressive commercial leadership roles across major UK FMCG organisations. Developed deep expertise across grocery multiples, wholesale, and convenience channels.",
+  "professionalExperience": [
+    {
+      "company": "Fullers Foods",
+      "dates": "April 2023 – October 2025",
+      "title": "Commercial Director — UK & Ireland",
+      "summary": "Board-level commercial leader with accountability for Sales, NPD, and Demand Planning (30 FTEs) and full commercial performance across UK & Ireland.",
+      "impact": [
+        {
+          "text": "Delivered accelerated revenue growth:",
+          "subPoints": [
+            "2022: £335m",
+            "2023: £411m",
+            "2024: £533m",
+            "2025 (forecast): £575m"
+          ]
+        },
+        {
+          "text": "Designed and implemented a 5-year strategic growth roadmap focused on core business acceleration, channel and category expansion, regional and international growth, acquisition pipeline development, brand portfolio optimisation, and operational efficiency improvement."
+        },
+        {
+          "text": "Re-engineered commercial operating model to improve cross-functional execution and governance."
+        },
+        {
+          "text": "Led investor communications on commercial strategy and performance, ensuring alignment with shareholder value objectives."
+        }
+      ]
+    },
+    {
+      "company": "McCain Foods",
+      "dates": "October 2017 - October 2022 Retail, October 2022 - March 2023 FS",
+      "title": "Customer Development Director — UK & Ireland",
+      "summary": "Senior commercial leader within the UK & Ireland executive structure, accountable for strategic customer partnerships, revenue delivery, and demand planning integration.",
+      "impact": [
+        {
+          "text": "Contributed to revenue growth from £511m to £713m."
+        },
+        {
+          "text": "Delivered market share, volume, and value growth across retail and foodservice channels."
+        },
+        {
+          "text": "Strengthened executive cross-functional alignment across Marketing, Category, Supply Chain, and Operations."
+        },
+        {
+          "text": "Elevated customer engagement standards and long-term joint business planning capability."
+        }
+      ]
+    }
+  ],
+  "educationBottom": [
+    {
+      "qualification": "BA (Hons) — Economics & Business Management",
+      "institution": "Leeds Trinity College"
+    },
+    {
+      "qualification": "A Levels — Economics, Law & Business Studies",
+      "institution": "Llandrillo College, North Wales"
+    }
+  ],
   "masthead": {
     "firstName": "Mark",
     "lastName": "Doyle",
@@ -10,11 +70,6 @@
     "phone": "07758 119516",
     "email": "Doylemj96@gmail.com"
   },
-  "executiveProfileHeading": "Executive Profile",
-  "executiveProfile": [
-    "Commercial Board-level leader with full P&L accountability and a proven track record of delivering accelerated revenue growth, margin expansion, and business transformation across branded and private-label CPG organisations.",
-    "Experienced operating within PLC, Private Equity-backed, and family-owned structures, partnering closely with investors and executive boards to define and execute long-term value creation strategies. Recognised for building high-performing leadership teams, driving market expansion, and delivering sustainable competitive advantage in complex, fast-evolving markets."
-  ],
   "capabilities": [
     "Enterprise-wide Commercial Strategy & Execution",
     "Full P&L Ownership (Revenue >£500m)",
@@ -27,6 +82,10 @@
     "Data-Led Decision Making & Governance Reporting",
     "Expansion into global markets"
   ],
+  "footer": {
+    "left": "Confidential — Mark Doyle",
+    "right": "Mark Doyle"
+  },
   "careerHighlights": [
     "Delivered sustained double-digit revenue growth across multiple businesses, scaling revenues from £335m to £575m within three years in latest role.",
     "Developed and executed 5-year commercial growth strategies covering core optimisation, channel diversification, regional expansion, and acquisition opportunities.",
@@ -34,71 +93,40 @@
     "Led large-scale commercial transformation programmes aligning Sales, Demand Planning, and NPD into integrated growth engines.",
     "Regularly reported to and aligned with Private Equity shareholders on strategic performance, governance, and long-term value creation."
   ],
-  "professionalExperience": [
-    {
-      "company": "Fullers Foods",
-      "dates": "April 2023 – October 2025",
-      "title": "Commercial Director — UK & Ireland",
-      "summary": "Board-level commercial leader with accountability for Sales, NPD, and Demand Planning (30 FTEs) and full commercial performance across UK & Ireland.",
-      "impact": [
-        {
-          "text": "Delivered accelerated revenue growth:",
-          "subPoints": ["2022: £335m", "2023: £411m", "2024: £533m", "2025 (forecast): £575m"]
-        },
-        {
-          "text": "Designed and implemented a 5-year strategic growth roadmap focused on core business acceleration, channel and category expansion, regional and international growth, acquisition pipeline development, brand portfolio optimisation, and operational efficiency improvement."
-        },
-        { "text": "Re-engineered commercial operating model to improve cross-functional execution and governance." },
-        { "text": "Led investor communications on commercial strategy and performance, ensuring alignment with shareholder value objectives." }
-      ]
-    },
-    {
-      "company": "McCain Foods",
-      "dates": "October 2017 - October 2022 Retail, October 2022 - March 2023 FS",
-      "title": "Customer Development Director — UK & Ireland",
-      "summary": "Senior commercial leader within the UK & Ireland executive structure, accountable for strategic customer partnerships, revenue delivery, and demand planning integration.",
-      "impact": [
-        { "text": "Contributed to revenue growth from £511m to £713m." },
-        { "text": "Delivered market share, volume, and value growth across retail and foodservice channels." },
-        { "text": "Strengthened executive cross-functional alignment across Marketing, Category, Supply Chain, and Operations." },
-        { "text": "Elevated customer engagement standards and long-term joint business planning capability." }
-      ]
-    }
-  ],
-  "footer": {
-    "left": "Confidential — Mark Doyle",
-    "right": "Mark Doyle"
+  "seo": {
+    "title": "Mark Doyle – Commercial Director",
+    "description": "Commercial Director · UK & Ireland"
   },
-  "earlierCareerIntro": "Progressive commercial leadership roles across major UK FMCG organisations. Developed deep expertise across grocery multiples, wholesale, and convenience channels.",
   "earlierCareer": [
     {
       "company": "Baxters Food Group",
-      "title": "Retail National Account Controller"
+      "title": "Retail National Account Controller",
+      "dates": "2013-2017"
     },
     {
       "company": "Princes Ltd",
-      "title": "Retail National Account Controller"
+      "title": "Retail National Account Controller",
+      "dates": "2009-2013"
     },
     {
       "company": "Premier Foods",
-      "title": "Senior National Account Manager"
+      "title": "Senior National Account Manager",
+      "dates": "2008-2009"
     },
     {
       "company": "Northern Foods",
-      "title": "National Account Manager"
+      "title": "National Account Manager",
+      "dates": "2007-2008"
     },
     {
       "company": "Cadbury Trebor Bassett",
-      "title": "Account & Field Sales Leadership"
+      "title": "Account & Field Sales Leadership",
+      "dates": "2000-2007"
     },
     {
       "company": "Imperial Tobacco",
       "title": "Territory Representative",
       "dates": "1998 – 2000"
     }
-  ],
-  "educationBottom": [
-    { "qualification": "BA (Hons) — Economics & Business Management", "institution": "Leeds Trinity College" },
-    { "qualification": "A Levels — Economics, Law & Business Studies", "institution": "Llandrillo College, North Wales" }
   ]
 }
